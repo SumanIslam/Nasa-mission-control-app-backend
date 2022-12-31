@@ -1,0 +1,43 @@
+{
+	"name": "nasa-project-api",
+	"version": "1.0.0",
+	"description": "NASA MISSION CONTROL API",
+	"main": "./src/server.js",
+	"scripts": {
+		"test": "jest --detectOpenHandles",
+		"test-watch": "jest --watch",
+		"start": "node src/server.js",
+		"watch": "nodemon src/server.js",
+		"cluster": "pm2 start src/server.js -i max",
+		"deploy-cluster": "npm run build --prefix client && npm run cluster",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SumanIslam/NASA-mission-control-project.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"jest": {
+		"testEnvironment": "node"
+	},
+	"bugs": {
+		"url": "https://github.com/SumanIslam/NASA-mission-control-project/issues"
+	},
+	"homepage": "https://github.com/SumanIslam/NASA-mission-control-project#readme",
+	"dependencies": {
+		"morgan": "^1.10.0",
+		"axios": "^0.24.0",
+		"cors": "^2.8.5",
+		"csv-parse": "^4.16.3",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"mongoose": "^6.0.13",
+		"pm2": "^5.1.2"
+	},
+	"devDependencies": {
+		"jest": "^27.2.4",
+		"nodemon": "^2.0.13",
+		"supertest": "^6.1.6"
+	}
+}
