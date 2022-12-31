@@ -15,22 +15,7 @@ app.use(cors());
 app.use(morgan('combined'))
 app.use(express.json());
 
-
 // Routes
 app.use('/v1', api);
-
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "..", "client", "build")));
-
-	app.get("*", (req, res) => {
-		res.sendFile(
-			path.join(__dirname, '..', '..', 'client', 'build', 'index.html'),
-			function (err) {
-				res.status(500).send(err);
-			}
-		);
-	});
-}
-
 
 module.exports = app;
