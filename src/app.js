@@ -10,7 +10,7 @@ const app = express();
 // middleware
 app.use(
 	cors({
-		origin: ['http://localhost:3000', 'https://nasamissioncontrol.vercel.app'],
+		origin: ['http://localhost:3000', 'https://nasamissioncontrol.vercel.app', 'https://sumanislam.vercel.app/'],
 	})
 );
 //  {
